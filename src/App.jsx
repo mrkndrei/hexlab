@@ -148,7 +148,11 @@ function App() {
                         style={{ background: color }}
                         title={`${color}`}
                       >
-                        <span className="text-xs font-semibold" style={{ color: textCol }}>{key}</span>
+                        {copied === `shade-${key}` ? (
+                          <FontAwesomeIcon icon={faCheck} style={{ color: textCol }} />
+                        ) : (
+                          <span className="text-xs font-semibold" style={{ color: textCol }}>{key}</span>
+                        )}
                       </button>
                     )
                   }) : <div className="text-sm text-zinc-500">Enter a valid hex to see shades</div>}
